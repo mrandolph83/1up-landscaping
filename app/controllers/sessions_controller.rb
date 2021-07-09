@@ -22,9 +22,18 @@ def create
     end 
 end 
 
-def omniauth  #log users in with omniauth
+def omniauth
+    @user = User.find_or_create_by(email: auth[:info][:email]) do |u|
+        u.password = SecureRandom.hex
+      end
 
-end
+      session[:user_id] = @user.id 
+      redirect_to user_path(@user)
+  end
 
+  private
 
+    def auth
+      request.env['omniauth.auth']
+    end
 end
