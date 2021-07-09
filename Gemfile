@@ -22,6 +22,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'omniauth'
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-google-oauth2'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -46,6 +50,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
+  gem 'dotenv-rails'
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
