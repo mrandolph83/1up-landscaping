@@ -1,1 +1,9 @@
-<h1> Welcome <%=@user.email%> user </h1>
+<h1> Welcome <%=@user.name%> </h1>
+
+<% if @user.image.attached? %>
+    <%= image_tag url_for(@user.image) %>
+ <%end%>
+
+ <%=@user.address_street %><br>
+ <%=@user.address_land %>
+ 
