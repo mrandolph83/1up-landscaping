@@ -8,6 +8,8 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save 
         session[:user_id] = @user.id 
+        @user.image.purge 
+        @user.image.attach(params[:user][:image])
         redirect_to user_path(@user)
       else 
         render :new
@@ -22,7 +24,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:email, :password, :image, :name, :address_street, :address_land)
+        params.require(:user).permit(:email, :password, :name, :address_street, :address_land)
     end 
 
 end
