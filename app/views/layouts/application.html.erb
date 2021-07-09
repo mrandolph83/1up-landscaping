@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OneUpLandscaping</title>
+    <title>GreenMushroomLandscaping</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,8 +9,13 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <div>
+  <%= link_to "Log Out", logout_path, method: :delete %>
+  <%= link_to "Schedule an Appointment", new_job_path %>
 
+  </div>
   <body>
     <%= yield %>
   </body>
 </html>
+ 
