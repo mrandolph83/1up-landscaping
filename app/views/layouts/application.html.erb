@@ -9,13 +9,23 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <div>
-  <%= link_to "Log Out", logout_path, method: :delete %>
-  <%= link_to "Schedule an Appointment", new_job_path %> 
-  <%= button_to "Log in with Google", '/auth/google_oauth2' %><br>
-  
 
+  <div class="top-nav">
+  <% if session[:user_id]%>
+  <%= link_to "Schedule an Appointment", new_job_path %>
+  <%= link_to "Recent Jobs", jobs_path %>
+  <%= link_to "Employees", employees_path %>
+  <%= link_to "Log Out", logout_path, method: :delete %>
+   
+  <% else %>
+  <%= link_to "Login", login_path %>
+  <%= link_to "Sign Up", signup_path%>
+  <%end%>
+
+  
+  
   </div>
+
   <body>
     <%= yield %>
   </body>
