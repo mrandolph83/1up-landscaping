@@ -1,14 +1,17 @@
 <h1> Welcome <%=@user.name%> </h1>
 
 <% if @user.image.attached? %>
-    <%= image_tag url_for(@user.image) %>
+<img src="<%=url_for(@user.image)%>" height="200" width="auto">
     
-<% elsif %>
-<img_src="<%= @user.omni_pic %> >"
     <% else %>
-    <img_src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC7eWPkOENnUQaLDHxVf6O9LLKUVIyN5XI9qRMZcGiUjfHy1mYMJo7ahQWVghk111ciYs&usqp=CAU>"
+    <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC7eWPkOENnUQaLDHxVf6O9LLKUVIyN5XI9qRMZcGiUjfHy1mYMJo7ahQWVghk111ciYs&usqp=CAU" height="200" width="auto">
     <% end %><br>
 
  <%=@user.address_street %><br>
  <%=@user.address_land %>
+
+<% if @user[:id] == session[:user_id]%>
+ <%= button_to "Delete User", user_path(@user), method: :delete %>
+ <%end%>
+ 
  
