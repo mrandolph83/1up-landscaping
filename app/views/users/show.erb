@@ -2,7 +2,12 @@
 
 <% if @user.image.attached? %>
     <%= image_tag url_for(@user.image) %>
- <%end%><br>
+    
+<% elsif %>
+<img_src="<%= @user.omni_pic %> >"
+    <% else %>
+    <img_src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC7eWPkOENnUQaLDHxVf6O9LLKUVIyN5XI9qRMZcGiUjfHy1mYMJo7ahQWVghk111ciYs&usqp=CAU>"
+    <% end %><br>
 
  <%=@user.address_street %><br>
  <%=@user.address_land %>

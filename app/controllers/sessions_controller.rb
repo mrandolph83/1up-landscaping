@@ -25,6 +25,8 @@ end
 def omniauth
     @user = User.find_or_create_by(email: auth[:info][:email]) do |u|
         u.password = SecureRandom.hex
+        u.name = auth[:info][:name]
+        u.omni_pic = auth[:info][:picture]
       end
 
       session[:user_id] = @user.id 
