@@ -1,5 +1,7 @@
+<h1>Employee Roster</h1>
+<% @employees.each do |e| %>
+    <h2> <%=link_to "#{e.name}", employee_path(e) %> - <%="#{e.name}"%> Rating</h2>
+   Needs to be a class method to determine average
+    <%end%>
 
-Employee index page
-
-Testing for latop abilities
-
+<h2> 
