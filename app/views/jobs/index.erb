@@ -1,1 +1,10 @@
 <h1> Job Index page</h1>
+
+<% @jobs.each do |job| %>
+    <% if !job.reviews.empty? %>
+    <%=job.picture%>
+    <h3><%=job.description%><br></h3>
+     <%=job.job_address_land%><br>
+     <%=job.reviews[0].rating%><br><br>
+     <%end%>
+    <%end%>

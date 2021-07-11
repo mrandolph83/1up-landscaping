@@ -2,10 +2,10 @@
 
 <%= form_for(@job) do |f| %>
     <%= f.label :job_address_street %>
-    <%= f.text_field :job_address_street %><br>
+    <%= f.text_field :job_address_street, :value => @user.address_street %><br>
 
     <%= f.label :job_address_land %>
-    <%= f.text_field :job_address_land %><br>
+    <%= f.text_field :job_address_land, :value => @user.address_land %><br>
 
     <%= f.label :service_date %>
     <%= f.text_field :service_date %><br>

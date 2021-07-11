@@ -42,8 +42,9 @@
     <%= f.label "employee_id" %>
     <%= f.collection_select :employee_id, Employee.all, :id, :name %><br>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
+    <h3> Admin Section: </h3>
+    <%= f.label :description %>
+    <%= f.text_field :description %><br>
 
     <%= f.label :image %> <br>
     <%= f.file_field :image %><br><br>

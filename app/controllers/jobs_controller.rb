@@ -1,8 +1,13 @@
 class JobsController < ApplicationController
 
-    def new
+  def index
+    @jobs = Job.all 
+  end 
+  
+  def new
         @job = Job.new
         @job.build_employee
+        @user = User.find_by_id(session[:user_id])
 
     end
 
