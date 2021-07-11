@@ -18,9 +18,20 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find_by_id(params[:id])
-        redirect_to '/' if !@user
-        
+        redirect_to '/' if !@user  
     end
+
+    def edit
+      @user = User.find(params[:id])
+     end
+     
+
+     def update
+      @user = User.find(params[:id])
+      @user.update(user_params)
+      redirect_to user_path(@user)
+     end
+     
 
     def destroy
       User.find(params[:id]).destroy

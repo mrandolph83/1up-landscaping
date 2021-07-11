@@ -1,0 +1,34 @@
+<%= form_for(@user) do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
+
+    <%= f.label :password %> 
+    <%= f.password_field :password %><br>
+
+    <%= f.label :full_Name, "Full Name" %>
+    <%= f.text_field :name %><br>
+    
+    <%= f.label :street_Address, "Street Address" %>
+    <%= f.text_field :address_street %><br><br>
+    
+    <%= f.label :mushroom_region %><br><br>
+
+    <%=f.radio_button :address_land, 'Hyrule'%>
+    <%=f.label :mushroom_kingdom, "Hyrule"%><br>
+
+    <%=f.radio_button :address_land, 'Mushroom Kingdom'%>
+    <%=f.label :mushroom_kingdom, "Mushroom Kingdom"%><br>
+
+    <%=f.radio_button :address_land, 'Donkey Kong Country'%>
+    <%=f.label :donkey_kong_country, "Donkey Kong Country"%><br>
+
+    <%=f.radio_button :address_land, "Bowser's Castle"%>
+    <%=f.label :mushroom_kingdom, "Bowser's Castle"%><br><br>
+
+    <%= f.label :image %> <br>
+    <%= f.file_field :image %><br><br><br>
+    <%= f.submit "Submit" %>
+    <% end %>
+
+
+   
