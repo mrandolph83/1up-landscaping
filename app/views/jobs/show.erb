@@ -1,5 +1,26 @@
-<h1> Welcome to the job show page! </h1>
+<h1> Job Details: </h1>
+
+<h3>Date</h3>
+<%=@job.service_date%><br>
+
+<h3>Address</h3> 
+<%=@job.job_address_street%><br>
+<%=@job.job_address_land%><br>
+
+<h3>Employee:</h3> 
+<%=@job.employee.name%>
+
+<h3>Services Requested </h3>
 
 <% @job.services.each do |service|%>
    <%= service %><br>
+   <%end%><br>
+
+
+   <% if @job[:user_id] == session[:user_id]%>
+   <%= link_to "Edit Job Request", edit_job_path(@job) %>
+   <%end%><br><br>
+  
+  <% if @job[:user_id] == session[:user_id]%>
+   <%= button_to "Delete Job", job_path(@job), method: :delete %>
    <%end%>

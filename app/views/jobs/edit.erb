@@ -1,4 +1,4 @@
-<h1> New Job Request </h1>
+<h1> Update Job Request </h1>
 
 <%= form_for(@job) do |f| %>
     <%= f.label :job_address_street %>
@@ -40,7 +40,13 @@
 
     <p> Request an employee for this service: </p>
     <%= f.label "employee_id" %>
-    <%= f.collection_select :employee_id, Employee.all, :id, :name %><br><br>
+    <%= f.collection_select :employee_id, Employee.all, :id, :name %><br>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :image %> <br>
+    <%= f.file_field :image %><br><br>
 
     <%= f.submit "Submit" %>
     <% end %>
