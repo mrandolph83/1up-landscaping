@@ -14,6 +14,7 @@ class EmployeesController < ApplicationController
           render :new
         end 
       end
+      
     def index
         @employees = Employee.all
         @employee = @employees.sample

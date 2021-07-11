@@ -2,7 +2,7 @@
 
 <% @jobs.each do |job| %>
     <img src="<%=job.picture%>" height="150" width="auto"><br>
-    <h3><%=link_to job.description, job_path(job) %><br></h3>
+    <h3><%=link_to job.description, job_path(job) %></h3>
      <%=job.job_address_land%><br>
      <% if !job.reviews.empty? %>
      <%=job.reviews[0].rating%><br><br>
