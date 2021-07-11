@@ -1,2 +1,11 @@
-REview Show page
-    
+<h1>Your Review For <%=@review.job.description%> </h1>
+<h3><%=@review.description%></h3>
+
+<%if current_user %>
+<%= link_to "Edit Review", edit_review_path(@review) %>
+   <br><br>
+  
+   <%= button_to "Delete Review", review_path(@review), method: :delete %>
+   <%end%>
+
+

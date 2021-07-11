@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   resources :reviews
 
+  resources :jobs do
+    resources :reviews, only: [:new, :index]
+    end
   namespace :admin do 
     resources :jobs, only: [:index, :show]
     resources :users, only: [:index]
@@ -15,9 +18,7 @@ Rails.application.routes.draw do
 
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
 
-  resources :jobs do
-    resources :reviews, only: [:new, :index]
-    end
+ 
   resources :employees
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -13,6 +13,7 @@
   <div class="top-nav">
   <br>
   <% if session[:user_id]%>
+  <%= link_to "My Account", user_path(session[:user_id]) %>
   <%= link_to "Schedule an Appointment", new_job_path %>
   <%= link_to "Recent Jobs", jobs_path %>
   <%= link_to "Employees", employees_path %>

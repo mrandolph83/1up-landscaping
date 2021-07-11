@@ -1,7 +1,7 @@
 <%= render partial: 'layouts/errors', locals: {object: @review}  %>
 
-<h1> Add a Review for <%=@job.description%> </h1>
-<h3> Job Service Date: <%=@job.service_date%> </h3>
+<h1> Edit Review for <%=@review.job.description%> </h1>
+<h3> Job Service Date: <%=@review.job.service_date%> </h3>
 <%= form_for(@review) do |f| %>
 
     <%= f.label "Rating (1-5 stars)" %>
@@ -10,7 +10,7 @@
     <%= f.label :description %> <br>
     <%= f.text_area :description, size: "25x10" %><br>
 
-    <%= f.hidden_field :job_id, :value => @job.id%>
+    <%= f.hidden_field :job_id, :value => @review.job_id%>
 
     <%= f.submit "Submit" %>
     <% end %>

@@ -19,6 +19,17 @@ class ReviewsController < ApplicationController
         @review = Review.find_by_id(params[:id])
     
     end 
+
+    def edit
+        @review = Review.find_by_id(params[:id])
+       end
+       
+  
+       def update
+        @review = Review.find(params[:id])
+        @review.update(review_params)
+        redirect_to review_path(@review)
+       end
     
     def index
         if params[:job_id]
