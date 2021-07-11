@@ -1,4 +1,4 @@
-<h1> This is a New Job page! </h1>
+<h1> Service Request </h1>
 
 <%= form_for(@job) do |f| %>
     <%= f.label :job_address_street %>
@@ -7,28 +7,24 @@
     <%= f.label :job_address_land %>
     <%= f.text_field :job_address_land %><br>
 
-    <%= f.label :services %>
-    <%= f.text_field :services %><br>
-
     <%= f.label :service_date %>
     <%= f.text_field :service_date %><br>
 
-    <p> Select an available employee from our roster </p>
+
+    <%= f.label :services %><br><br>
+
+    <%=f.check_box("services", {:multiple => true }, "Deku Tree Trim", nil)%>
+    <%=f.label :services, "Deku Tree Trim"%><br>
+
+    <%=f.check_box("services", {:multiple => true }, "Mushroom Tree Fertilization", nil)%>
+    <%=f.label :services, "Mushroom Tree Fertilization"%><br>
+
+
+
+    <p> Select an available employee from our roster: </p>
     <%= f.label "employee_id" %>
     <%= f.collection_select :employee_id, Employee.all, :id, :name %><br>
     <p>Or let us select for you </p>
 
-    <%= f.submit "Create Job Request" %>
-
-    I want to add a date scheduler (rails gem?), save
-    is as an integer. Upon submission, it checks if 
-    the empplyee is available. CUSTOM ERROR MESSAGE (pt 4
-    of ice cream social). Then in show page, have
-    it read as srftime (can you display it?). 
-
-    On collection_select of employees, add a method (employee_available),
-    where it reads if employee is available, and displays it as "available" (green)
-    or "Unavailable" (red). Look at 48:30 in pt4 of Ice Cream
-
-    Perhaps after the error, it can list who is available in the error message
+    <%= f.submit "Submit" %>
     <% end %>
