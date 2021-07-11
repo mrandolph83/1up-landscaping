@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   resources :reviews
 
+  namespace :admin do 
+    resources :jobs, only: [:index, :show]
+    resources :users, only: [:index]
+    resources :reviews, only: [:index]
+  end 
+
   get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
 
   resources :jobs do

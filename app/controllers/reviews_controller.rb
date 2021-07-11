@@ -28,6 +28,11 @@ class ReviewsController < ApplicationController
             @reviews = Review.all
         end 
     end 
+
+    def destroy
+        Review.find(params[:id]).destroy
+        redirect_to '/'
+      end 
     
     private
     

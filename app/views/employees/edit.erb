@@ -1,13 +1,13 @@
 
 <% if is_admin? %>
-<h1>Create a New Employee </h1>
+<h1>Edit Employee </h1>
 
 <%= form_for(@employee) do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name%><br>
+    <%= f.text_field :name, :value => @user.address_street %><br>
 
     <%= f.label :bio %>
-    <%= f.text_field :bio%><br>
+    <%= f.text_field :bio, :value => @user.address_land %><br>
 
     <%= f.label :headshot %>
     <%= f.text_field :headshot %><br

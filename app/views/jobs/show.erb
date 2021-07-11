@@ -1,10 +1,14 @@
 <h1> Job Details: </h1>
-
+ 
+<img src="<%=@job.picture%>" height="300" width="auto"><br>
+<h3><%=@job.description%></h3>
 <h3>Date</h3>
 <%=@job.service_date%><br>
 
-<h3>Address</h3> 
+<h3>Location</h3> 
+<% if current_user || is_admin?%>
 <%=@job.job_address_street%><br>
+<%end%>
 <%=@job.job_address_land%><br>
 
 <h3>Employee:</h3> 
@@ -17,10 +21,9 @@
    <%end%><br>
 
 
-   <% if @job[:user_id] == session[:user_id]%>
+   <% if current_user || is_admin?%>
    <%= link_to "Edit Job Request", edit_job_path(@job) %>
-   <%end%><br><br>
+   <br><br>
   
-  <% if @job[:user_id] == session[:user_id]%>
    <%= button_to "Delete Job", job_path(@job), method: :delete %>
    <%end%>
