@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
     def new 
         @job = Job.find_by_id(params[:job_id])
-        @review = @job.reviews.build
+        @review = Review.new
     end 
     
     def create

@@ -47,6 +47,9 @@
     <%= f.label :description %>
     <%= f.text_field :description %><br><br>
 
+    <%= f.label "user_id" %>
+    <%= f.collection_select :user_id, User.all, :id, :name %><br>  
+
     <%= f.label :job_picture %> <br>
     <%= f.text_field :picture %><br><br>
     <%end%>

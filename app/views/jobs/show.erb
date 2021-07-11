@@ -1,5 +1,5 @@
 <h1> Job Details: </h1>
- 
+
 <img src="<%=@job.picture%>" height="300" width="auto"><br>
 <h3><%=@job.description%></h3>
 <h3>Date</h3>
@@ -21,7 +21,7 @@
    <%end%><br>
 
 
-   <% if current_user || is_admin?%>
+   <% if is_admin?%>
    <%= link_to "Edit Job Request", edit_job_path(@job) %>
    <br><br>
   

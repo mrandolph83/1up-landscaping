@@ -1,2 +1,7 @@
 <h1>All the reviews </h1>
 
+<% @reviews.each do |r|%>
+    <%= find_job_by_rating(r) %>
+    <%=r.rating%>
+    <%end%>
+
