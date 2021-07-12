@@ -14,5 +14,46 @@
  *= require_self
  */
 
+.top-logo {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 0px 0px auto;
+}
 
+
+
+.checkerboard {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -6px;
+}
+
+.nav-text {
+    float: center;
+    position: relative;
+    text-align: center;
+    top: -30px;
+   
+    
+
+}
+
+body {
+    background-color: #6185f8; 
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 18px;
+  }
+
+  .wrapper {
+    background: #ffffff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 16px auto;
+    max-width: 960px;
+    padding: 2.25%; /* 18px / 800px */
+    width: 85%;
+  }
 

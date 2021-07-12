@@ -10,34 +10,42 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-# Top navigation Logo/Picture
-  <div class="top logo">
+  <div class="top-logo">
 
 <%= link_to root_path do %>
-    <img src="/assets/Top_Bar.png" height="140"/> 
+    <img src="/assets/Top_Bar.png" height="132"/> 
  <% end %>
+
  </div>
 
-  <div class="top-nav">
-  <br>
-  <% if session[:user_id]%>
-  <%= link_to "My Account", user_path(session[:user_id]) %>
-  <%= link_to "Schedule an Appointment", new_job_path %>
-  <%= link_to "Recent Jobs", jobs_path %>
-  <%= link_to "Employees", employees_path %>
-  <%= link_to "Log Out", logout_path, method: :delete %>
-   
-  <% else %>
-  <%= link_to "Login", login_path %>
-  <%= link_to "Sign Up", signup_path%>
-  <%end%>
+ 
+ <div class="checkerboard"> <img src="/assets/checkerboard_top_3.jpg"/> 
+ </div>
+ <% if session[:user_id]%>
 
+ <div class="nav-text">
+ <%= link_to " My Account ", user_path(session[:user_id]) %>
+ <%= link_to " Schedule an Appointment ", new_job_path %>
+ <%= link_to " Recent Jobs ", jobs_path %>
+ <%= link_to " Employees ", employees_path %>
+ <%= link_to " Log Out ", logout_path, method: :delete %>
   
-  
-  </div>
+ <% else %>
+ <%= link_to "Login", login_path %>
+ <%= link_to "Sign Up", signup_path%>
+ <%end%>
+ </div>
+
+ 
+
 
   <body>
+  <div class="wrapper">
     <%= yield %>
+    <footer class="branding">
+    <small>&copy; 2021 <strong>1Up Landscaping</strong></small>
+  </footer>
+</div>
   </body>
 </html>
  
