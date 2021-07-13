@@ -1,8 +1,9 @@
+
 <h1>  <img src="/assets/fire_flower.png" height="40"/> New Job Request <img src="/assets/fire_flower.png" height="40"/></h1>
 
 <%= form_for(@job) do |f| %>
     <h4><%= f.label :job_address_street %>
-    <%= f.text_field :job_address_street, :value => @user.address_street %><h4>
+    <%= f.text_field :job_address_street, :value => @user.address_street %></h4>
 
     <h4><%= f.label :job_address_land %>
     <%= f.text_field :job_address_land, :value => @user.address_land %></h4>

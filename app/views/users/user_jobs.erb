@@ -1,0 +1,11 @@
+<h1> Your Jobs </h>
+<%@user_jobs.each do |j|%>
+   
+    <h4><%=link_to j.description, job_path(j), style: 'color:#0000ff;' %></h4>
+    <%=j.service_date %><br>
+    <img src="<%=j.picture%>" height="150" width="auto"><br>
+    <% if j.reviews.empty? %>
+    <%=link_to "Review this job", new_job_review_path(j) %><br><br>
+    <%end%>
+    <%end%>
+    <br>

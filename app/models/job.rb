@@ -6,4 +6,8 @@ class Job < ApplicationRecord
     serialize :services
 
     accepts_nested_attributes_for :employee
+
+    def self.user_jobs(id)
+        where(user_id: id)
+    end
 end

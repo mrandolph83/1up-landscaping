@@ -12,21 +12,12 @@
  <%=@user.address_land %><br></p>
 
  <% if @user[:id] == session[:user_id]%>
- <p><%= link_to "Edit Your Information", edit_user_path(@user) %></p>
+ <p><%= link_to "Edit Your Information", edit_user_path %></p>
  <%= button_to "Delete Account", user_path(@user), method: :delete %>
  <%end%>
-<h2>Your Jobs:</h2>
+<h2><%=link_to "View/Update Your Jobs:", user_jobs_path(@user)%></h2>
 
-<%@user.jobs.each do |j|%>
-   
-    <h4><%=link_to j.description, job_path(j), style: 'color:#0000ff;' %></h4>
-    <%=j.service_date %><br>
-    <img src="<%=j.picture%>" height="150" width="auto"><br>
-    <% if j.reviews.empty? %>
-    <%=link_to "Review this job", new_job_review_path(j) %><br><br>
-    <%end%>
-    <%end%>
-    <br>
+
     </div>
  
  

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root :to => 'sessions#welcome'
   get '/' => 'sessions#welcome'
   get '/login' => 'sessions#new'
+  get '/user_jobs' => 'users#user_jobs'
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'

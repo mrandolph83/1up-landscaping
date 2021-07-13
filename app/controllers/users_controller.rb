@@ -18,7 +18,15 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find_by_id(params[:id])
+        @user_jobs = Job.user_jobs(params[:id])
         redirect_to '/' if !@user  
+    end
+
+    def user_jobs 
+      @user = User.find_by_id(session[:user_id])
+      @user_jobs = Job.user_jobs(session[:user_id])
+      
+      redirect_to '/' if !@user 
     end
 
     def edit
