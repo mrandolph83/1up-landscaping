@@ -7,24 +7,25 @@
     <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC7eWPkOENnUQaLDHxVf6O9LLKUVIyN5XI9qRMZcGiUjfHy1mYMJo7ahQWVghk111ciYs&usqp=CAU" height="200" width="auto">
     <% end %><br>
 
- <%=@user.address_street %><br>
- <%=@user.address_land %><br><br>
+ <p><%=@user.address_street %><br>
+ <%=@user.address_land %><br></p>
 
  <% if @user[:id] == session[:user_id]%>
- <%= link_to "Edit Your Information", edit_user_path(@user) %>
- <%= button_to "Delete User", user_path(@user), method: :delete %>
+ <p><%= link_to "Edit Your Information", edit_user_path(@user) %></p>
+ <%= button_to "Delete Account", user_path(@user), method: :delete %>
  <%end%>
 
 
 <%@user.jobs.each do |j|%>
    
-    <h3><%=j.description %></h3>
+    <h4><%=link_to j.description, job_path(j), style: 'color:#0000ff;' %></h4>
     <%=j.service_date %><br>
     <img src="<%=j.picture%>" height="150" width="auto"><br>
     <% if j.reviews.empty? %>
     <%=link_to "Review this job", new_job_review_path(j) %><br><br>
     <%end%>
     <%end%>
+    <br>
  
  
  

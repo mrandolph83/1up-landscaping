@@ -16,19 +16,37 @@
 
 
  h1 {
-    font-size: 27px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
     color: #ffffff;
     background-color: #0000ff;
-    border-width: 10px 0px 10px 0px;
     border-style: solid;
     border-color: #0000ff;
-    margin-top: 3px;
+    border-width: 40px;
+    text-align: center;
+    position: relative;
+    top: -30px;
+    
     
    
   }
 
+  h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: #ffffff;  
+  }
+
+  h4 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    color: #000000;  
+  }
+
+
+
 p {
-    font-family: Press+Start+2P
+    font-family: 'Quicksand', sans-serif;
 }
 body {
     background-color: #6185f8; 
@@ -59,7 +77,10 @@ body {
     position: relative;
     text-align: center;
     top: -30px;
-    word-spacing: 100px
+    word-spacing: 100px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    
    
     
 
@@ -70,7 +91,9 @@ body {
     position: relative;
     text-align: center;
     top: -30px;
-   
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    
     
 
 }
@@ -88,7 +111,7 @@ body {
     min-height: 540px;
     max-height: 540px;
     padding: 2.25%; /* 18px / 800px */
-    width: 85%;
+    width: 90%;
     position: relative;
     top: -680px;
     border-width: 14px;

@@ -1,29 +1,30 @@
 <h1> Job Details: </h1>
 
 <img src="<%=@job.picture%>" height="300" width="auto"><br>
-<h3><%=@job.description%></h3>
-<h3>Date</h3>
-<%=@job.service_date%><br>
+<h4>Description</h4>
+<p><%=@job.description%></p>
+<h4>Date</h4>
+<p><%=@job.service_date%><p>
 
-<h3>Location</h3> 
+<h4>Location</h4> 
 <% if current_user || is_admin?%>
-<%=@job.job_address_street%><br>
+<p><%=@job.job_address_street%></p>
 <%end%>
-<%=@job.job_address_land%><br>
+<p><%=@job.job_address_land%></p>
 
-<h3>Employee:</h3> 
+<h4>Employee:</h4> 
 <%=@job.employee.name%>
 
-<h3>Services Requested </h3>
+<h4>Services Requested </h4>
 
-<% @job.services.each do |service|%>
+<p><% @job.services.each do |service|%></p>
    <%= service %><br>
    <%end%><br>
 
 
    <% if is_admin?%>
-   <%= link_to "Edit Job Request", edit_job_path(@job) %>
+   <p><%= link_to "Edit Job Request", edit_job_path(@job) %></p>
    <br><br>
   
-   <%= button_to "Delete Job", job_path(@job), method: :delete %>
+   <%= button_to "Delete Job", job_path(@job), method: :delete %><br>
    <%end%>

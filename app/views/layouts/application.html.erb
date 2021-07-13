@@ -7,7 +7,8 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Press+Start+2P'%>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -25,11 +26,11 @@
  <% if session[:user_id]%>
 
  <div class="nav-text">
- <%= link_to " My Account ", user_path(session[:user_id]) %>
- <%= link_to " Schedule an Appointment ", new_job_path %> 
- <%= link_to " Recent Jobs ", jobs_path %>
- <%= link_to " Employees ", employees_path %>
- <%= link_to " Log Out ", logout_path, method: :delete %>
+ <%= link_to "My Account", user_path(session[:user_id]), style: 'color:#000000;' %>
+ <%= link_to "Job Request", new_job_path, style: 'color:#000000;' %> 
+ <%= link_to "Portfolio", jobs_path, style: 'color:#000000;' %>
+ <%= link_to "Employees", employees_path, style: 'color:#000000;' %>
+ <%= link_to "Logout", logout_path, method: :delete, style: 'color:#000000;' %>
 </div>
  <% else %>
  </div>
