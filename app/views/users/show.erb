@@ -1,5 +1,6 @@
-<h1> Welcome <%=@user.name%> </h1>
+<h1> <img src="/assets/Red_Mushroom.png" height="40"/> Welcome  <%=first_name(@user.name)%> <img src="/assets/Red_Mushroom.png" height="40"/></h1>
 
+<div class="user-info">
 <% if @user.image.attached? %>
 <img src="<%=url_for(@user.image)%>" height="200" width="auto">
     
@@ -26,6 +27,7 @@
     <%end%>
     <%end%>
     <br>
+    </div>
  
  
  

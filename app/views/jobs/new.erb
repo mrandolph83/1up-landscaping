@@ -1,19 +1,19 @@
-<h1> New Job Request </h1>
+<h1>  <img src="/assets/fire_flower.png" height="40"/> New Job Request <img src="/assets/fire_flower.png" height="40"/></h1>
 
 <%= form_for(@job) do |f| %>
-    <%= f.label :job_address_street %>
-    <%= f.text_field :job_address_street, :value => @user.address_street %><br>
+    <h4><%= f.label :job_address_street %>
+    <%= f.text_field :job_address_street, :value => @user.address_street %><h4>
 
-    <%= f.label :job_address_land %>
-    <%= f.text_field :job_address_land, :value => @user.address_land %><br>
+    <h4><%= f.label :job_address_land %>
+    <%= f.text_field :job_address_land, :value => @user.address_land %></h4>
 
-    <%= f.label :service_date %>
-    <%= f.text_field :service_date %><br>
+   <h4> <%= f.label :service_date %>
+    <%= f.text_field :service_date %><h4>
 
 
-  <h3>Services Requested</h3>
+  <h4>Services Requested</h4>
 
-    <%=f.check_box("services", {:multiple => true }, "Deku Tree Trim", nil)%>
+    <p><%=f.check_box("services", {:multiple => true }, "Deku Tree Trim", nil)%>
     <%=f.label :services, "Deku Tree Trim"%><br>
 
     <%=f.check_box("services", {:multiple => true }, "Mushroom Fertilization", nil)%>
@@ -36,11 +36,12 @@
 
     <%=f.label :services, "Other"%>
     <%=f.text_field("services", {:multiple => true })%>
-    <br>
+    </p>
 
-    <p> Request an employee for this service: </p>
-    <%= f.label "employee_id" %>
-    <%= f.collection_select :employee_id, Employee.all, :id, :name %><br><br>
+    <h4> Request an employee for this service: </h4>
+   <p> <%= f.label "employee_id" %>
+    <%= f.collection_select :employee_id, Employee.all, :id, :name %></p><br>
 
     <%= f.submit "Submit" %>
+    <br>
     <% end %>

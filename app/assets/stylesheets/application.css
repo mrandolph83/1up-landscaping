@@ -17,12 +17,12 @@
 
  h1 {
     font-family: 'Press Start 2P', cursive;
-    font-size: 30px;
+    font-size: 25px;
     color: #ffffff;
     background-color: #0000ff;
     border-style: solid;
     border-color: #0000ff;
-    border-width: 40px;
+    border-width: 30px;
     text-align: center;
     position: relative;
     top: -30px;
@@ -62,7 +62,9 @@ body {
     
 }
 
-
+.user-info {
+    float: top;
+}
 
 .checkerboard {
     display: flex;
@@ -73,7 +75,7 @@ body {
 }
 
 .nav-text-welcome {
-    float: center;
+    
     position: relative;
     text-align: center;
     top: -30px;
@@ -87,17 +89,18 @@ body {
 }
 
 .nav-text {
-    float: center;
+    
     position: relative;
     text-align: center;
     top: -30px;
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
-    
-    
-
 }
 
+span:hover + div{
+
+    font-size: 13px;
+  }
 
 
 

@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    
   </head>
 
   <div class="top-logo">
@@ -26,7 +28,8 @@
  <% if session[:user_id]%>
 
  <div class="nav-text">
- <%= link_to "My Account", user_path(session[:user_id]), style: 'color:#000000;' %>
+ 
+<%= link_to "My Account", user_path(session[:user_id]), style: 'color:#000000;' %>
  <%= link_to "Job Request", new_job_path, style: 'color:#000000;' %> 
  <%= link_to "Portfolio", jobs_path, style: 'color:#000000;' %>
  <%= link_to "Employees", employees_path, style: 'color:#000000;' %>
