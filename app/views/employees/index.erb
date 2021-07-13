@@ -1,15 +1,16 @@
-<h1>Employee Spotlight</h1>
+<h1><img src="/assets/Star.png" height="40"/> Our Stars <img src="/assets/Star.png" height="40"/></h1>
+
+
+<img src="<%=@employee.headshot%>" height="300" width="auto"><br>
 <% if is_admin? %>
 <%=link_to "Make a New Employee", new_employee_path%>
 <%end%>
-<h2> <%=@employee.name%></h2>
-<img src="<%=@employee.headshot%>" height="300" width="auto"><br>
-<%=@employee.bio%>
-
-<%=@employee.name%>
+<h3> <%=@employee.name%></h3>
+<h4> <img src="/assets/Star.png" height="20"/><%="#{average_rating(@employee)}"%> Average Rating</h4>
+<p><%=@employee.bio%></p>
 
 <% @employees.each do |e| %>
-    <h2> <%=link_to "#{e.name}", employee_path(e) %> - <%="#{e.name}"%> - <%="#{average_rating(e)}"%> Rating</h2>
+    <h4> <%=link_to "#{e.name}", employee_path(e), style: 'color:#000000;'  %> - <img src="/assets/Star.png" height="20"/><%="#{average_rating(e)}"%></h4>
    
     <%if is_admin? %>
    <%= button_to "Delete Employee", employee_path(e), method: :delete %>

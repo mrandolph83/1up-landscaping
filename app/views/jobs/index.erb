@@ -1,16 +1,21 @@
-<h1> Job Index page</h1>
+<h1> <img src="/assets/fire_flower.png" height="40"/> Recent Jobs <img src="/assets/fire_flower.png" height="40"/> </h1>
 
 <% @jobs.each do |job| %>
+    <% if job.description %>
     <img src="<%=job.picture%>" height="150" width="auto"><br>
-    <h3><%=link_to job.description, job_path(job) %></h3>
-     <%=job.job_address_land%><br>
+    
+    <h4><%=link_to job.description, job_path(job), style: 'color:#0000ff;'  %></h4>
+     <p><%=job.job_address_land%></p>
+     <%end%>
     
      <% if !job.reviews.empty? %>
-     <img src="/assets/Star.png" height="20"/><%=job.reviews[0].rating%> out of 5 stars<br><br>
+     <img src="/assets/Star.png" height="20"/>  <%=job.reviews[0].rating%> out of 5 stars<br><br>
      <%end%>
      <%if is_admin? %>
+     <%= job.user.name %>
+     <%= job.service_date%>
      <%= link_to "Edit Job", edit_job_path(job) %>
-     <%= button_to "Delete Job", job_path(job), method: :delete %>
-   
+     <%= button_to "Delete Job", job_path(job), method: :delete %><br>
+     
     <%end%>
     <%end%>

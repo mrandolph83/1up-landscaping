@@ -1,12 +1,18 @@
-<h1> Job Details: </h1>
+<h1> <img src="/assets/fire_flower.png" height="40"/> Job Details <img src="/assets/fire_flower.png" height="40"/></h1>
 
 <img src="<%=@job.picture%>" height="300" width="auto"><br>
-<h4>Description</h4>
+
+<% if !@job.reviews.empty? %>
+     <h4><img src="/assets/Star.png" height="20"/> <%=@job.reviews[0].rating%> out of 5 stars<br></h4>
+   <%else%>
+   None Given
+     <%end%>
+<h4>Description:</h4>
 <p><%=@job.description%></p>
-<h4>Date</h4>
+<h4>Date:</h4>
 <p><%=@job.service_date%><p>
 
-<h4>Location</h4> 
+<h4>Location:</h4> 
 <% if current_user || is_admin?%>
 <p><%=@job.job_address_street%></p>
 <%end%>
@@ -15,16 +21,17 @@
 <h4>Employee:</h4> 
 <%=@job.employee.name%>
 
-<h4>Services Requested </h4>
+<h4>Services Requested: </h4>
 
 <p><% @job.services.each do |service|%></p>
    <%= service %><br>
-   <%end%><br>
+   <%end%>
 
 
    <% if is_admin?%>
    <p><%= link_to "Edit Job Request", edit_job_path(@job) %></p>
-   <br><br>
+   <br>
   
    <%= button_to "Delete Job", job_path(@job), method: :delete %><br>
    <%end%>
+   <br>

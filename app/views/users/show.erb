@@ -7,7 +7,7 @@
     <% else %>
     <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC7eWPkOENnUQaLDHxVf6O9LLKUVIyN5XI9qRMZcGiUjfHy1mYMJo7ahQWVghk111ciYs&usqp=CAU" height="200" width="auto">
     <% end %><br>
-
+<h3><%=@user.name %></h4>
  <p><%=@user.address_street %><br>
  <%=@user.address_land %><br></p>
 
@@ -15,7 +15,7 @@
  <p><%= link_to "Edit Your Information", edit_user_path(@user) %></p>
  <%= button_to "Delete Account", user_path(@user), method: :delete %>
  <%end%>
-
+<h2>Your Jobs:</h2>
 
 <%@user.jobs.each do |j|%>
    

@@ -22,19 +22,22 @@
     background-color: #0000ff;
     border-style: solid;
     border-color: #0000ff;
-    border-width: 30px;
+    border-width: 20px;
     text-align: center;
     position: relative;
     top: -30px;
-    
-    
-   
+  }
+
+  h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 25px;
+    color: #000000;  
   }
 
   h3 {
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
-    color: #ffffff;  
+    color: #000000;  
   }
 
   h4 {
@@ -66,6 +69,15 @@ body {
     float: top;
 }
 
+.opening-text {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    
+}
+
 .checkerboard {
     display: flex;
     justify-content: center;
@@ -82,10 +94,6 @@ body {
     word-spacing: 100px;
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
-    
-   
-    
-
 }
 
 .nav-text {
@@ -111,8 +119,8 @@ span:hover + div{
     box-shadow: 0 0 10px rgba(0,0,0,.3);
     margin: 16px auto;
     max-width: 640px;
-    min-height: 540px;
-    max-height: 540px;
+    min-height: 530px;
+    max-height: 530px;
     padding: 2.25%; /* 18px / 800px */
     width: 90%;
     position: relative;

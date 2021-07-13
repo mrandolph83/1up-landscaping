@@ -36,6 +36,11 @@ class EmployeesController < ApplicationController
         @employee.update(employee_params)
         redirect_to employee_path(@employee)
        end
+
+       def destroy
+        Employee.find(params[:id]).destroy
+        redirect_to employees_path
+      end 
   
       private
   
