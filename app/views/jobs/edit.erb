@@ -1,5 +1,5 @@
-<h1>  <img src="/assets/fire_flower.png" height="40"/> New Job Request <img src="/assets/fire_flower.png" height="40"/></h1>
-
+<h1>  <img src="/assets/fire_flower.png" height="40"/> Edit Job <img src="/assets/fire_flower.png" height="40"/></h1>
+<h4><%= @job.description %> </h4>
 <%= form_for(@job) do |f| %>
     <%= f.label :job_address_street %>
     <%= f.text_field :job_address_street %><br>

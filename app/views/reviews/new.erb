@@ -1,11 +1,15 @@
-<%= render partial: 'layouts/errors', locals: {object: @review}  %>
 
-<h1> Add a Review for <%=@job.description%> </h1>
-<h3> Job Service Date: <%=@job.service_date%> </h3>
+
+<h1> Add a Review </h1>
+<% if flash[:error] %>
+<h3> <em><%= flash[:error] %> <em></h3>
+<% end %>
+<h4><%=@job.description%> </h4>
+<h4> Job Service Date: <%=@job.service_date%> </h4>
 <%= form_for(@review) do |f| %>
 
     <%= f.label "Rating (1-5 stars)" %>
-    <%= f.number_field :rating, min:0, max:5 %><br>
+    <%= f.number_field :rating %><br>
 
     <%= f.label :description %> <br>
     <%= f.text_area :description, size: "25x10" %><br>

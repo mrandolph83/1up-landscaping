@@ -1,17 +1,22 @@
 class ReviewsController < ApplicationController
 
     def new 
-        @job = Job.find_by_id(params[:job_id])
         @review = Review.new
+        @job = Job.find_by_id(params[:job_id])
+        
+        
+       
     end 
     
     def create
         @review = Review.new(review_params)
-    
+        @job = Job.find_by_id(review_params[:job_id])
+        
         if @review.save 
             redirect_to review_path(@review)
         else 
-            render :new 
+            flash[:error] = "Ratings must be between 1 and 5"
+            redirect_to new_job_review_path(@job)
         end 
     end
     

@@ -5,7 +5,14 @@
     <%=j.service_date %><br>
     <img src="<%=j.picture%>" height="150" width="auto"><br>
     <% if j.reviews.empty? %>
-    <%=link_to "Review this job", new_job_review_path(j) %><br><br>
+    <%=link_to "Review this Job", new_job_review_path(j) %><br><br>
+    <% else %>
+    <p> <img src="/assets/Star.png" height="20"/>  <%=j.reviews[0].rating%> out of 5 stars<br><br>
+   </p>
+    <%=link_to "Edit Review", edit_review_path(j) %><br>
+
     <%end%>
     <%end%>
+
+
     <br>

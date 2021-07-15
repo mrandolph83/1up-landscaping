@@ -1,5 +1,7 @@
-<h1>Your Review For <%=@review.job.description%> </h1>
-<h3><%=@review.description%></h3>
+<h1>Your Review  </h1>
+
+<h4><%=@review.description%></h4>
+<p><%=@review.description%></p>
 
 <%if current_user %>
 <%= link_to "Edit Review", edit_review_path(@review) %>
